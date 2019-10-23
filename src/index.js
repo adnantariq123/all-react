@@ -13,8 +13,8 @@ import {Provider} from 'react-redux';
 import MainCombineState from './ALLStatesGoHere/MainCombineStates';
 
 
-//const store = createStore(allReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-const store = createStore(MainCombineState);
+const store = createStore(MainCombineState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+//const store = createStore(MainCombineState);
 
 
 

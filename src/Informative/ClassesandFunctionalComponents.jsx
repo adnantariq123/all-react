@@ -7,8 +7,9 @@ const Simple = () => {
         <div className="col-12">
           <h1>Class vs Functional components</h1>
 
-
+          <p>React lets you define components as classes or functions. Components defined as classes currently provide more features. To define a React component class, you need to extend React.Component:</p>
           <h3>Class components</h3>
+          <p>Each component has several “lifecycle methods” that you can override to run code at particular times in the process. </p>
           <p>
             -in class component you have to import React, [ Component ] from
             'react';

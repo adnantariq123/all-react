@@ -1,20 +1,37 @@
 
 const initialState = {
-    age:5
+    age:3,
+    //isMarked:false,
+    MarkNum:0
 }
 const StateCounter = (state=initialState,action) => {
-    const newState = {...state};
+    let newState = {...state};
     //newState.age=newState.age+10;
 
+    
     if(action.type ==='Age_UP') {
         newState.age++;
     };
 
     if(action.type ==='Age_DOWN') {
         newState.age--;
+
+        if(newState.age ===0) {
+        newState.age = 1;
+        }
     };
 
-    
+    if(action.type ==='Marked') {
+        return {
+            ...newState,
+            // you do not need , just grab the value and that's it
+            //isMarked: !newState.isMarked,
+            
+            MarkNum: newState.age
+        }
+    };   
+
+    console.log(newState);
     return newState;
 
 }
