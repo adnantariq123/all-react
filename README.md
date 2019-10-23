@@ -1,8 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##ADDED by me ^-^
+## ADDED by me ^-^
+
 React Routers using: npm install react-router-dom
 React Redux using: npm install redux react-redux
+Bootstrap@4.3.1 using: npm install bootstrap
 
 
 ## Available Scripts
