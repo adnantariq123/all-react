@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 //import {useSelector, useDispatch} from 'react-redux';
 
 class TechSithStateCounter extends Component {
-    
+
+
     
     render() {
 
@@ -35,7 +36,8 @@ class TechSithStateCounter extends Component {
 
 }
 
-const mapStateToProps = state => ({ age: state.age })
+// 
+const mapStateToProps = state => ({ age: state.StateCC.age })
 
 export default connect(mapStateToProps)(TechSithStateCounter);
 

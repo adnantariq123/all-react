@@ -1,6 +1,6 @@
 
 const initialState = {
-    age:0
+    age:5
 }
 const StateCounter = (state=initialState,action) => {
     const newState = {...state};
