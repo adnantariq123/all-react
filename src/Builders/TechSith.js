@@ -1,6 +1,6 @@
 import React, { Component, useState  } from 'react';
 
-//import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 //import {useSelector, useDispatch} from 'react-redux';
 
 class TechSithStateCounter extends Component {
@@ -22,7 +22,7 @@ class TechSithStateCounter extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-4">
-                            Age :  
+                            Age :  {this.props.age}
                         </div>
                     </div>
                 </div>
@@ -35,8 +35,8 @@ class TechSithStateCounter extends Component {
 
 }
 
+const mapStateToProps = state => ({ age: state.age })
 
+export default connect(mapStateToProps)(TechSithStateCounter);
 
-//export default connect(mapping)(TechSithStateCounter);
-
-export default TechSithStateCounter;
+// export default TechSithStateCounter;

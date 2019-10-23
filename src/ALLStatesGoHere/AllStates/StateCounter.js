@@ -14,7 +14,7 @@ const StateCounter = (state=initialState,action) => {
         newState.age--;
     };
 
-    console.log(newState);
+    
     return newState;
 
 }
