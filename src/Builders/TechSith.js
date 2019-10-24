@@ -28,7 +28,7 @@ class TechSithStateCounter extends Component {
     /* componentDidMount() is invoked immediately after a component is mounted (inserted into the tree).*/
     componentDidMount() {
         console.clear();
-        console.log("coming from TechSithStateCounter ComponentDidMount function");
+        //console.log("coming from TechSithStateCounter ComponentDidMount function");
         // and because I have a console.clear(); it will wipe out
     }
 
