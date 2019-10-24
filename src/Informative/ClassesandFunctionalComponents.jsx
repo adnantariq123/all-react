@@ -33,7 +33,7 @@ const Simple = () => {
         <div className="col-12">
           <h3>Functional Components</h3>
 
-          <p>these are stateless components</p>
+          <p>these are stateless components <i>...... well that now has changed thanks to hooks like useState</i> </p>
           <p>-in function component you DO NOT have to import React, [ Component ] from 'react';</p>
           <p>-You DO NOT have a RENDER method.. you just have the RETURN Method with your logic</p>
           <p>- in functional component you HAVE to DEFINE or pass props as an arguement the function takes then it is avalaible
