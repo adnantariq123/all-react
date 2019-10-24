@@ -29,7 +29,14 @@ const StateCounter = (state=initialState,action) => {
             
             MarkNum: newState.age
         }
-    };   
+    }; 
+    
+    if(action.type==='Reset') {
+        return {
+            ...newState,
+            MarkNum: 0
+        }       
+    }
 
     console.log(newState);
     return newState;

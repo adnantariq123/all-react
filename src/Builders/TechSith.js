@@ -19,7 +19,8 @@ const dispatching =(dispatch)=> {
     return {
         AgeUP: ()=> dispatch({type:'Age_UP'}),
         AgeDOWN: ()=> dispatch({type:'Age_DOWN'}),
-        MARKED: ()=> dispatch({type:'Marked'})
+        MARKED: ()=> dispatch({type:'Marked'}),
+        RESET: ()=> dispatch({type:'Reset'})
     }
 }
 
@@ -28,13 +29,15 @@ class TechSithStateCounter extends Component {
     /* componentDidMount() is invoked immediately after a component is mounted (inserted into the tree).*/
     componentDidMount() {
         console.clear();
-        //console.log("coming from TechSithStateCounter ComponentDidMount function");
-        // and because I have a console.clear(); it will wipe out
+        this.props.RESET();        
+        // not the best reset but it does the job for now
     }
+
+
 
     render() {
        
-        console.log("yo rendererrrr");
+        //console.log("yo rendererrrr");
         //const counter = useSelector(state => state.counter);
         return (
             <React.Fragment>
