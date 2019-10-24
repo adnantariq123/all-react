@@ -12,6 +12,21 @@ const Inform = () => {
   //this did NOt need an array
   const[showLorem, setShowLorem] = useState(false);
 
+  // even the scroll goes to the state and we update that with 
+  const[scrollDepth, setScrollDepth] = useState(0);
+
+  // this function's purpose is to find the scroll location, then simply pass it to setScrollDepth which updates the state
+  function scrollLocater () {
+      const scrolled = document.documentElement.scrollTop || document.body.scrollTop;
+      setScrollDepth(scrolled)
+  }
+
+  // and where is where we call that function scrollLocater.. COOL
+  useEffect(()=>{
+    window.addEventListener('scroll', scrollLocater );
+  })
+
+
   return (
     <React.Fragment>
       <div className="container">
@@ -58,6 +73,10 @@ const Inform = () => {
             notice the difference between these two function and how we are calling them! */}
 
             <button onClick={()=>{setShowLorem(showLorem => !showLorem)}}>lets add some Lorem Ipson</button>
+
+            <br></br>
+            <p>Scroll location: {scrollDepth}</p>
+
           </div>
 
         </div>
