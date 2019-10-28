@@ -1,5 +1,12 @@
 import React, { Component,  } from 'react';
 
+/*
+import {useLocation} from 'react-router-dom'; IMPORTANT becuse we are using a CLASS component
+we do not need to use useLocation hook like we did in Information2.jsx or in 
+ClassesandFunctionalComponents.jsx which are functional compoents 
+and call by this.props.location.pathname
+*/
+
 import { connect } from 'react-redux';
 //import {useSelector, useDispatch} from 'react-redux';
 
@@ -24,6 +31,8 @@ const dispatching =(dispatch)=> {
     }
 }
 
+
+
 class TechSithStateCounter extends Component {
 
     /* componentDidMount() is invoked immediately after a component is mounted (inserted into the tree).*/
@@ -36,7 +45,12 @@ class TechSithStateCounter extends Component {
 
 
     render() {
-       
+
+         //this.located = useLocation();
+
+
+
+
         //console.log("yo rendererrrr");
         //const counter = useSelector(state => state.counter);
         return (
@@ -44,7 +58,8 @@ class TechSithStateCounter extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <h1>Tech sit Age counter</h1>
+                            {/* becuase this is inside a class component we have to class it like this instead */}
+                            <h1>Tech sit Age counter {this.props.location.pathname}</h1>
                         </div>
                     </div>
                 </div>

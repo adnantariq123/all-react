@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-
+import {useLocation} from 'react-router-dom';
 import Lorem from './LoreumIpson';
 
 //  following the https://www.youtube.com/watch?v=d9Pndaq9MJs example
+
+
 
 
 const Inform = () => {
@@ -12,10 +14,11 @@ const Inform = () => {
   //this did NOt need an array
   const[showLorem, setShowLorem] = useState(false);
 
-  // even the scroll goes to the state and we update that with 
+  // even the scroll goes to the state and we update that with. Note: useState(0) could have been useState(100)... 
+  //that would just set the intial value of the scrollDepth to be 100
   const[scrollDepth, setScrollDepth] = useState(0);
 
-  // this function's purpose is to find the scroll location, then simply pass it to setScrollDepth which updates the state
+  // this function's purpose is to find the scroll location, then simply pass it to setScrollDepth() which updates the state
   function scrollLocater () {
       const scrolled = document.documentElement.scrollTop || document.body.scrollTop;
       setScrollDepth(scrolled)
@@ -26,13 +29,14 @@ const Inform = () => {
     window.addEventListener('scroll', scrollLocater );
   })
 
+  const located = useLocation();
 
   return (
     <React.Fragment>
       <div className="container">
         <div className="row">
           <div className="col-6">
-            <h1>useState </h1>
+            <h1>useState {located.pathname}</h1>
           </div>
 
           <div className="col-2">

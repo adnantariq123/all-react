@@ -1,8 +1,17 @@
 import React, { Component } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 class NavBar extends Component {
+
+
+ 
+  goBackHandle =() => {
+    console.log("com");
+
+  }
+
+
   render() {
     return (
       <div className="container">
@@ -25,7 +34,13 @@ class NavBar extends Component {
                 <Link to="/TechSith" className="nav-link">
                 TechSith
                 </Link>
-              </li>              
+              </li> 
+
+              <li className="nav-item">
+                <span className="nav-link" onClick={this.goBackHandle}>
+                Back
+                </span>
+              </li>                           
             </ul>
           </div>
         </div>

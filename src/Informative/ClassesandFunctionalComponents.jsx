@@ -1,11 +1,20 @@
 import React from "react";
+import {useLocation} from 'react-router-dom';
+
+
+
 
 const Simple = () => {
+
+  // uselocation is a 'Hook' that's a function which returns an OBJECT
+  const located = useLocation();
+  console.log(located);
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <h1>Class vs Functional components</h1>
+          <h1>Class vs Functional components: {located.pathname}</h1>
 
           <p>React lets you define components as classes or functions. Components defined as classes currently provide more features. To define a React component class, you need to extend React.Component:</p>
           <h3>Class components</h3>
@@ -28,6 +37,10 @@ const Simple = () => {
             Where/Why do should you use them? whenver you have to mantian a state
             use a Class component
         </p>
+
+        <p>When we are using a CLASS component
+we do not need to use useLocation hook like we did in Information2.jsx or in 
+ClassesandFunctionalComponents.jsx which are functional compoents</p>
         </div>
 
         <div className="col-12">
