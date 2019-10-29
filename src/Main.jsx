@@ -9,6 +9,7 @@ import NavBar from "./Navigation/NavBar";
 import ClassvsFun from "./Informative/ClassesandFunctionalComponents";
 import Info from "./Informative/Information2";
 import TechSithAgeCounter from './Builders/TechSith';
+import Forms from './Builders/Forms';
 
 
 
@@ -25,6 +26,7 @@ function Main() {
         <Route path="/ClassvsFun" exact component={ClassvsFun}/>
         <Route path="/Info" component={Info}/>
         <Route path="/TechSith" component={TechSithAgeCounter}/>
+        <Route path="/Forms" component={Forms}/>
 
       </Switch>
     </BrowserRouter>
