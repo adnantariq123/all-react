@@ -1,4 +1,6 @@
 import StateCounter from './AllStates/StateCounter';
+import FakeData from './AllStates/FakeData';
+import BlankData from './AllStates/BlankData';
 
 
 // the COMBINE REDUCERS is an Function with Objects... where each object is a state
@@ -9,7 +11,9 @@ import {combineReducers} from 'redux';
 
 const MainCombined = combineReducers(
     {
-        StateCC: StateCounter
+        StateCC: StateCounter,
+        FakeData: FakeData,
+        BlankData:BlankData
     }
 
 

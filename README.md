@@ -7,6 +7,12 @@ React Redux using: npm install redux react-redux
 Bootstrap@4.3.1 using: npm install bootstrap
 
 
+
+#examples for AXIOS
+https://www.youtube.com/watch?v=x9UEDRbLhJE
+https://www.youtube.com/watch?v=oQnojIyTXb8
+https://www.youtube.com/watch?v=4uzEUATtNHQ
+
 ## Available Scripts
 
 In the project directory, you can run:

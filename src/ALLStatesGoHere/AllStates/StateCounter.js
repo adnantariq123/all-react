@@ -38,7 +38,7 @@ const StateCounter = (state=initialState,action) => {
         }       
     }
 
-    console.log(newState);
+    //console.log(newState);
     return newState;
 
 }
