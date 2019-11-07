@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import { connect } from 'react-redux';
 
+let meStart;
 
 //mapStateToProps
 const mapping = xyz => ({ 
@@ -10,17 +11,20 @@ const mapping = xyz => ({
 
 
 //mapDispatchToProps can also be written as something with another name
-const mapDispatchToProps =(dispatch, aaa)=> {
+const mapDispatchToProps =(dispatch)=> {
+    //const data = meStart;
 
     //AgeUP: ()=> dispatch({type:'Age_UP'}),
     //console.log("dispatch is : " + dispatch);
-    //console.log("aaa is : " + aaa);
+    console.log("meStart is : " + meStart);
 
     //return dispatch
     //return ()=>({dispatch})
-    return (
-        ()=> dispatch({type: 'UpdateName', valz: aaa})
-    )
+    return {
+        //()=> dispatch({type: 'UpdateName', valz: aaa})
+
+        UpdateName: ()=> dispatch({type:'UpdateName', valz:meStart})
+    }
     };
 
 
@@ -40,14 +44,17 @@ class Forms extends Component {
     // fullname:null
     // }
 
+
     handleSubmit = (event) => {
         event.preventDefault()
 
         // 'show me the data
-        const data = this.state;
-        console.log("the data from this form is as follows :" + data.fullname)
+       
+        console.log("the data from this form is as follows :" + meStart.fullname);
 
-        mapDispatchToProps( 'UpdateName',data.fullname)
+        //mapDispatchToProps( 'UpdateName',data.fullname)
+
+        //this.props.UpdateName
     }
 
 
@@ -56,17 +63,24 @@ class Forms extends Component {
         event.preventDefault();
         //console.log(event);
         // the following allows you to get the name of the input as well as the value
-        console.log(event.target.name);
-        console.log(event.target.value);
+        //console.log(event.target.name);
+        //console.log(event.target.value);
+
+        // using callback cause your a pro like that bro... bro
         this.setState({
             [event.target.name]: event.target.value
+        }, () => {
+            meStart = this.state.fullname;
+            console.log("meStart is : " + meStart);           
         })
+
+
     }
 
     render() { 
         //const {fullname} = this.state; BOTH LINES WORK THE SAME WAY ... ?
         const fullname = this.state.fullname;
-        console.log(fullname)
+        //console.log(fullname)
 
         return (
             <div className="container">
@@ -74,7 +88,7 @@ class Forms extends Component {
                     <div className="col-12">
                         <h1>Hi {fullname}</h1>
 
-                        <form onSubmit={this.handleSubmit}>
+                        <form onSubmit={this.props.UpdateName}>
                             <p>put stuff here : <input type='text' placeholder={this.props.fullname} name="fullname" onChange={this.handleInputChange}/> </p>
                             <p> <button> submit</button></p>
                         </form>
@@ -85,5 +99,5 @@ class Forms extends Component {
     }
 }
  
-//export default connect (mapping, mapDispatchToProps) (Forms);
-export default Forms;
+export default connect (mapping, mapDispatchToProps) (Forms);
+//export default Forms;
