@@ -69,6 +69,7 @@ const Inform = () => {
             <p>Purposely not using the Redux in this example. trying with a local state using 'useState' hook</p>
             {/* because cartItems is an array/object... we just wanrt to see the dam text  */}
             <p>cart: {cartItems.toString()}</p>
+            
 
 
             <button onClick={()=>{setCartItems([...cartItems, 'apple'])}}>Add apples</button>

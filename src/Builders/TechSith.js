@@ -1,5 +1,7 @@
 import React, { Component,  } from 'react';
 
+import BottomBorder from '../Builders/BottomBorder';
+
 /*
 import {useLocation} from 'react-router-dom'; IMPORTANT becuse we are using a CLASS component
 we do not need to use useLocation hook like we did in Information2.jsx or in 
@@ -62,7 +64,11 @@ class TechSithStateCounter extends Component {
                             <h1>Tech sit Age counter {this.props.location.pathname}</h1>
                         </div>
                     </div>
+
+                    <BottomBorder/>
                 </div>
+
+                <BottomBorder/>
                 <div className="container">
                     <div className="row">
                         {/* all the magic to check if Marked number matches the current number THEN change css */}

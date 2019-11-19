@@ -1,6 +1,8 @@
 import React from "react";
 import {useLocation} from 'react-router-dom';
 
+import BottomBorder from '../Builders/BottomBorder';
+
 
 
 
@@ -17,6 +19,8 @@ const Simple = () => {
           <h1>Class vs Functional components: {located.pathname}</h1>
 
           <p>React lets you define components as classes or functions. Components defined as classes currently provide more features. To define a React component class, you need to extend React.Component:</p>
+          
+          <BottomBorder/>
           <h3>Class components</h3>
           <p>Each component has several “lifecycle methods” that you can override to run code at particular times in the process. </p>
           <p>
@@ -42,6 +46,8 @@ const Simple = () => {
 we do not need to use useLocation hook like we did in Information2.jsx or in 
 ClassesandFunctionalComponents.jsx which are functional compoents</p>
         </div>
+
+        <BottomBorder/>
 
         <div className="col-12">
           <h3>Functional Components</h3>
