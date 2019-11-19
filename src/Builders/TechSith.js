@@ -1,6 +1,6 @@
 import React, { Component,  } from 'react';
 
-import BottomBorder from '../Builders/BottomBorder';
+import BottomBorder from './VisualShared/BottomBorder';
 
 /*
 import {useLocation} from 'react-router-dom'; IMPORTANT becuse we are using a CLASS component

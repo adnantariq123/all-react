@@ -34,12 +34,20 @@ class NavBar extends Component {
                 <Link to="/TechSith" className="nav-link">
                 TechSith
                 </Link>
-              </li> 
+              </li>
+
               <li className="nav-item">
                 <Link to="/Forms" className="nav-link">
                 Forms
                 </Link>
-              </li> 
+              </li>
+
+              <li className="nav-item">
+                <Link to="/Visual" className="nav-link">
+                Visual
+                </Link>
+              </li>
+
 
               <li className="nav-item">
                 <span className="nav-link" onClick={this.goBackHandle}>
