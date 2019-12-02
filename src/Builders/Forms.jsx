@@ -87,6 +87,7 @@ class Forms extends Component {
                 <div className="row">
                     <div className="col-12">
                         <h1>Hi {fullname}</h1>
+                        <p> does not work correctly :-(</p>
 
                         <form onSubmit={this.props.UpdateName}>
                             <p>put stuff here : <input type='text' placeholder={this.props.fullname} name="fullname" onChange={this.handleInputChange}/> </p>

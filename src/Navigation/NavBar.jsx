@@ -48,12 +48,18 @@ class NavBar extends Component {
                 </Link>
               </li>
 
+              <li className="nav-item">
+                <Link to="/PersistedData" className="nav-link">
+                Persisted Data
+                </Link>
+              </li>
 
               <li className="nav-item">
                 <span className="nav-link" onClick={this.goBackHandle}>
                 Back
                 </span>
-              </li>                           
+              </li>
+
             </ul>
           </div>
         </div>
