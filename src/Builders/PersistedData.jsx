@@ -9,7 +9,7 @@ const mapping = xyz => ({
 });
 
 const dispatching =(actions) => {
-
+  
 }
 
 class Forms extends Component {
@@ -94,7 +94,7 @@ class Forms extends Component {
                 <label className="col-form-label">First Name</label>
                 <input
                   type="text"
-                  value={this.props.fValue}
+                  value={this.state.fValue}
                   name="fValue"
                   onChange={this.handleUserNameChange}
                   className="form-control"
@@ -106,7 +106,7 @@ class Forms extends Component {
                 <label className="col-form-label">Last Name</label>
                 <input
                   type="text"
-                  value={this.props.lValue}
+                  value={this.state.lValue}
                   name="lValue"
                   onChange={this.handleUserNameChange}
                   className="form-control"
@@ -127,7 +127,7 @@ class Forms extends Component {
                     name="SEX"
                     id="exampleRadios1"
                     value="MALE"
-                    checked={this.props.SEX === "MALE"}
+                    checked={this.state.SEX === "MALE"}
                     onChange={this.handleUserNameChange}
                   />
                   <label className="form-check-label" htmlFor="exampleRadios1">
@@ -143,7 +143,7 @@ class Forms extends Component {
                     name="SEX"
                     id="exampleRadios2"
                     value="FEMALE"
-                    checked={this.props.SEX === "FEMALE"}
+                    checked={this.state.SEX === "FEMALE"}
                     onChange={this.handleUserNameChange}
                   />
                   <label className="form-check-label" htmlFor="exampleRadios2">
