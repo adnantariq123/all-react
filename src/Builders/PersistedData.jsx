@@ -1,24 +1,12 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-
-
-const mapping = xyz => ({ 
-  fValue: xyz.DataPersist.fValue ,
-  lValue: xyz.DataPersist.lValue,
-  SEX: xyz.DataPersist.SEX,
-});
-
-const dispatching =(actions) => {
-  
-}
 
 class Forms extends Component {
-  // state = {
-  //   fValue: "",
-  //   lValue: "",
-  //   SEX: "",
-  //   OPTIONS:[]
-  // };
+  state = {
+    fValue: "",
+    lValue: "",
+    SEX: "",
+    OPTIONS:[]
+  };
   // constructor (props) {
   //     super(props)
   //     this.state = {
@@ -208,7 +196,4 @@ class Forms extends Component {
   }
 }
 
-//export default connect(mapping, dispatching)(TechSithStateCounter);
-
-export default connect(mapping, dispatching)(Forms);
-
+export default Forms;
