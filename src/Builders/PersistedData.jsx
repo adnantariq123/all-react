@@ -1,12 +1,24 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
+
+
+const mapping = xyz => ({ 
+  fValue: xyz.DataPersist.fValue ,
+  lValue: xyz.DataPersist.lValue,
+  SEX: xyz.DataPersist.SEX,
+});
+
+const dispatching =(actions) => {
+
+}
 
 class Forms extends Component {
-  state = {
-    fValue: "",
-    lValue: "",
-    SEX: "",
-    OPTIONS:[]
-  };
+  // state = {
+  //   fValue: "",
+  //   lValue: "",
+  //   SEX: "",
+  //   OPTIONS:[]
+  // };
   // constructor (props) {
   //     super(props)
   //     this.state = {
@@ -82,7 +94,7 @@ class Forms extends Component {
                 <label className="col-form-label">First Name</label>
                 <input
                   type="text"
-                  value={this.state.fValue}
+                  value={this.props.fValue}
                   name="fValue"
                   onChange={this.handleUserNameChange}
                   className="form-control"
@@ -94,7 +106,7 @@ class Forms extends Component {
                 <label className="col-form-label">Last Name</label>
                 <input
                   type="text"
-                  value={this.state.lValue}
+                  value={this.props.lValue}
                   name="lValue"
                   onChange={this.handleUserNameChange}
                   className="form-control"
@@ -115,7 +127,7 @@ class Forms extends Component {
                     name="SEX"
                     id="exampleRadios1"
                     value="MALE"
-                    checked={this.state.SEX === "MALE"}
+                    checked={this.props.SEX === "MALE"}
                     onChange={this.handleUserNameChange}
                   />
                   <label className="form-check-label" htmlFor="exampleRadios1">
@@ -131,7 +143,7 @@ class Forms extends Component {
                     name="SEX"
                     id="exampleRadios2"
                     value="FEMALE"
-                    checked={this.state.SEX === "FEMALE"}
+                    checked={this.props.SEX === "FEMALE"}
                     onChange={this.handleUserNameChange}
                   />
                   <label className="form-check-label" htmlFor="exampleRadios2">
@@ -196,4 +208,7 @@ class Forms extends Component {
   }
 }
 
-export default Forms;
+//export default connect(mapping, dispatching)(TechSithStateCounter);
+
+export default connect(mapping, dispatching)(Forms);
+
