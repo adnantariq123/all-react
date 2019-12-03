@@ -4,7 +4,8 @@ class Forms extends Component {
   state = {
     fValue: "",
     lValue: "",
-    SEX:""
+    SEX: "",
+    OPTIONS:[]
   };
   // constructor (props) {
   //     super(props)
@@ -33,18 +34,37 @@ class Forms extends Component {
     }
   };
 
+  // is going to be a UNIVERSAL grabb, will require more logic
   handleUserNameChange = event => {
-    this.setState(
-      {
-        [event.target.name]: event.target.value
-      },
-      () => {
-        this.savetoLocalStorage(this.state);
-      }
-    );
+
+    // if(event.target.name ==="OPTIONS" && !this.state.OPTIONS.includes(event.target.value) === true) {
+    //     console.log("Came to options")
+
+    //     this.setState(
+    //       {
+    //         [event.target.name]: [... this.state.OPTIONS ,event.target.value]
+    //       },
+    //       () => {
+    //         this.savetoLocalStorage(this.state);
+    //       }
+    //     );        
+    // }
+    // else {
+      this.setState(
+        {
+          [event.target.name]: event.target.value
+        },
+        () => {
+          this.savetoLocalStorage(this.state);
+        }
+      );
+    // }
+
+
   };
 
-  componentWillMount = () => {
+  //componentWillMount would throw a warning(not an error)
+  UNSAFE_componentWillMount = () => {
     this.setState(this.loadFromLocalStorage());
   };
 
@@ -52,71 +72,125 @@ class Forms extends Component {
   render() {
     return (
       <React.Fragment>
+        <form>
 
 
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <form>
-                <div className="form-group row">
-                  <label className="col-sm-2 col-form-label">First Name</label>
+          <div className="container">
+            <div className="form-row">
+
+              <div className="form-group col-md-6">
+                <label className="col-form-label">First Name</label>
+                <input
+                  type="text"
+                  value={this.state.fValue}
+                  name="fValue"
+                  onChange={this.handleUserNameChange}
+                  className="form-control"
+                  placeholder="First name"
+                />
+              </div>
+
+              <div className="form-group col-md-6">
+                <label className="col-form-label">Last Name</label>
+                <input
+                  type="text"
+                  value={this.state.lValue}
+                  name="lValue"
+                  onChange={this.handleUserNameChange}
+                  className="form-control"
+                  placeholder="Last name"
+                />
+              </div>
+            </div>
+          
+
+
+          {/* GRAB THE USER SEX MALE/FEMALE - BOOLEAN */}
+          <div className="form-row">
+              <div className="form-group col-md-4">
+                <div className="form-check form-check-inline">
                   <input
-                    type="text"
-                    value={this.state.fValue}
-                    name="fValue"
+                    className="form-check-input"
+                    type="radio"
+                    name="SEX"
+                    id="exampleRadios1"
+                    value="MALE"
+                    checked={this.state.SEX === "MALE"}
                     onChange={this.handleUserNameChange}
                   />
-
-                  <label className="col-sm-2 col-form-label">Last Name</label>
-                  <input
-                    type="text"
-                    value={this.state.lValue}
-                    name="lValue"
-                    onChange={this.handleUserNameChange}
-                  />
+                  <label className="form-check-label" htmlFor="exampleRadios1">
+                    Male
+                  </label>
                 </div>
-              </form>
+
+
+                <div className="form-check form-check-inline">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="SEX"
+                    id="exampleRadios2"
+                    value="FEMALE"
+                    checked={this.state.SEX === "FEMALE"}
+                    onChange={this.handleUserNameChange}
+                  />
+                  <label className="form-check-label" htmlFor="exampleRadios2">
+                    Female
+                  </label>
+                </div>
+
+                </div>
+
+
+                {/* Grab multiple options to select from!  - NOT a boolean, but will need to be an array 
+                <div className="form-group col-md-8">
+
+                <div className="form-check form-check-inline">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    name="OPTIONS"
+                    id="checkbox1"
+                    value="ONE"
+                    //checked={this.state.OPTIONS === "ONE"}
+                    //onChange={this.handleUserNameChange} did not work :(
+                  />
+                  <label className="form-check-label" htmlFor="checkbox1">
+                    Option 1
+                  </label>
+                </div>
+
+
+                <div className="form-check form-check-inline">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    name="OPTIONS"
+                    id="checkbox2"
+                    value="TWO"
+                    //checked={this.state.OPTIONS === "TWO"}
+                    //onChange={this.handleUserNameChange} did not work :(
+                  />
+                  <label className="form-check-label" htmlFor="checkbox2">
+                    Option 2
+                  </label>
+                </div>
+
+                </div>*/}
+
+
+
+
+
+
+
+
             </div>
-          </div>
-        </div>
 
 
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="SEX"
-                  id="exampleRadios1"
-                  value="MALE"
-                  checked={this.state.SEX=="MALE"}
-                  onChange={this.handleUserNameChange}
-                />
-                <label className="form-check-label" htmlFor="exampleRadios1">
-                  Male
-                </label>
-              </div>
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="SEX"
-                  id="exampleRadios2"
-                  value="FEMALE"
-                  checked={this.state.SEX=="FEMALE"}
-                  onChange={this.handleUserNameChange}
-                />
-                <label className="form-check-label" htmlFor="exampleRadios2">
-                  Female
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
 
-
+          </div>  {/*  one containr to rule them ALL */}
+        </form>
       </React.Fragment>
     );
   }
