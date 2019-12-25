@@ -62,7 +62,10 @@ ClassesandFunctionalComponents.jsx which are functional compoents</p>
 functional components `might` not have a way to define a state</p>
         </div>
 
+
+
         
+
       </div>
     </div>
   );

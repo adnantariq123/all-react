@@ -12,6 +12,7 @@ import TechSithAgeCounter from './Builders/TechSith';
 import Forms from './Builders/Forms';
 import Visual from './Builders/Visual';
 import PersistedData from './Builders/PersistedData';
+import PureVsRegComponent from "./Informative/PureVsRegComp";
 
 
 
@@ -26,6 +27,7 @@ function Main() {
       {/* components I will swtich will be placed inside */}
       <Switch>
         <Route path="/ClassvsFun" exact component={ClassvsFun}/>
+        <Route path="/PureVsRegComp" component={PureVsRegComponent}/>
         <Route path="/Info" component={Info}/>
         <Route path="/TechSith" component={TechSithAgeCounter}/>
         <Route path="/Forms" component={Forms}/>

@@ -35,6 +35,53 @@ const Inform = () => {
     <React.Fragment>
       <div className="container">
         <div className="row">
+          <div className="col-12">
+          <h1>DESTRUCTURING props</h1>
+            <p>
+              
+          render() &lcub;<br/>
+          FOLLOWING <br/>
+          const &lcub;PName, PNum, balance, participation&rcub; = this.props; <br/>
+          is the same as :<br/>
+          this.props.PName<br/>
+          this.props.PNum<br/>
+          this.props.balance<br/>
+          this.props.participation<br/>
+          this is called <b>DESTRUCTURING props</b> and this could have also been done with states if required<br/>
+          
+          const &lcub;PName, PNum, balance, participation&rcub; = this.props;<br/>
+          </p>
+          </div>
+        </div>
+      </div>
+
+
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+          <h1>What are Keys in react/ or in .js</h1>
+          <p>"key" is a special string attribute you need to include when creating a list of elements... typically we use the .map function to make this list. Key give the element a stable identity, it has to be <b>unique</b>. Key help React identify which item have changed/added/ or removed. They help react/.js identify the items of the list generated.</p>
+          <p>in the "unlikely" event that we do NOt have a unique identifier to be used as the key. we can use the <u>index</u> parameter while using the map. However this isn't alwasy the best appraoch, and if at all should be avoided</p>
+  <p> names.map((xyz, <span className="alert-danger">index</span>)=> &lt;h2 key=index&gt; whatever &lt;/h2&gt;)</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+          <h1>Methods are PROPS</h1>
+          <p>Just like you can send a <b>props</b> from a parent to a child component <i>this.props.name</i> . You can also <b>send functions from parent to child component</b> using <i>this.props.functionName</i>. This would be a great example of using one main parent to house all the required functionality in all respective children components??</p>
+
+            </div>
+          </div>
+        </div>     
+        
+
+
+      <div className="container">
+        <div className="row">
           <div className="col-6">
             <h1>useState {located.pathname}</h1>
           </div>

@@ -25,8 +25,14 @@ class NavBar extends Component {
               </li>
 
               <li className="nav-item">
+                <Link to="/PureVsRegComp" className="nav-link">
+                  Pure Vs Reg Component
+                </Link>
+              </li>
+
+              <li className="nav-item">
                 <Link to="/Info" className="nav-link">
-                  Information two
+                  General Information
                 </Link>
               </li>
 
