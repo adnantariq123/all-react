@@ -6,7 +6,7 @@ class PureComp extends PureComponent {
         return (
             <React.Fragment>
                 <h1>Pure Components {this.props.name}</h1>
-                <p>A PURE component implements the <i>shouldComponentUpdate</i> and does a "shallow" props and state comparison.... meaning everytime the state from the parent got updated, it MAY or MAY NOT need to render itself(again, based on if the shalow comparison of states/props)
+                <p>A PURE component implements the <i>shouldComponentUpdate</i> and does a "shallow" props and state comparison.... meaning everytime the state from the parent got updated, it MAY or MAY NOT need to render itself(again, based on if the shalow comparison of states/props... if the state or props stays the same a pure compoenent will not re-render)
                 </p>
 
                 <h3>Shallow Comparison (SC)</h3>
