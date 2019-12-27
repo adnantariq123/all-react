@@ -41,7 +41,11 @@ class NavBar extends Component {
                 TechSith
                 </Link>
               </li>
-
+              <li className="nav-item">
+                <Link to="/ErrorHandling" className="nav-link">
+                Error
+                </Link>
+              </li>
               <li className="nav-item">
                 <Link to="/Forms" className="nav-link">
                 Forms

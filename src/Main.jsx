@@ -13,6 +13,7 @@ import Forms from './Builders/Forms';
 import Visual from './Builders/Visual';
 import PersistedData from './Builders/PersistedData';
 import PureVsRegComponent from "./Informative/PureVsRegComp";
+import ErrorHandling from "./Informative/ErrorHandling";
 
 
 
@@ -30,10 +31,11 @@ function Main() {
         <Route path="/PureVsRegComp" component={PureVsRegComponent}/>
         <Route path="/Info" component={Info}/>
         <Route path="/TechSith" component={TechSithAgeCounter}/>
+        <Route path="/ErrorHandling" component={ErrorHandling}/>
+
         <Route path="/Forms" component={Forms}/>
         <Route path="/Visual" component={Visual}/>
         <Route path="/PersistedData" component={PersistedData}/>
-
       </Switch>
     </BrowserRouter>
   );
