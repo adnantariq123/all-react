@@ -18,6 +18,12 @@ class NavBar extends Component {
         <div className="row">
           <div className="col-12">
             <ul className="nav">
+            <li className="nav-item">
+                <Link to="/HOC" className="nav-link">
+                  HOC!
+                </Link>
+              </li>
+
               <li className="nav-item">
                 <Link to="/ClassvsFun" className="nav-link">
                   Class vs Functional Components

@@ -14,6 +14,7 @@ import Visual from './Builders/Visual';
 import PersistedData from './Builders/PersistedData';
 import PureVsRegComponent from "./Informative/PureVsRegComp";
 import ErrorHandling from "./Informative/ErrorHandling";
+import HOC from "./Informative/HOC";
 
 
 
@@ -27,6 +28,7 @@ function Main() {
 
       {/* components I will swtich will be placed inside */}
       <Switch>
+        <Route path="/HOC" exact component={HOC}/>  
         <Route path="/ClassvsFun" exact component={ClassvsFun}/>
         <Route path="/PureVsRegComp" component={PureVsRegComponent}/>
         <Route path="/Info" component={Info}/>
