@@ -64,10 +64,8 @@ const Inform = () => {
         <div className="row">
           <div className="col-12">
             <h1>React Portals?</h1>
-            <p>We use ReactDOM.render to load our &lt;APP/>, document.getElementByID, and target 'ROOT'.  So if we look at our DOM tree, every single component class under the 'ROOT' div. React Portal give the ablity to break out of that DOM tree.</p>
-            <ul>
-              <li>first create a DOM nod that is outside the document.getElementById('root')</li>
-            </ul>
+            <p>We use ReactDOM.render to load our &lt;APP/>, document.getElementByID, and target 'ROOT'.  So if we look at our DOM tree, every single component functional or class is under the 'ROOT' div. React Portal give the ablity to break out of that DOM tree, and mount our components to other DOM nodes.</p>
+            <p>Even tho this nod which is outside main root div, all the components insider will still act the same way as if they were a part of the react tree</p>
 
           </div>
         </div>
@@ -79,9 +77,9 @@ const Inform = () => {
             <h1>DESTRUCTURING props</h1>
             <p>
 
-              render() &lcub;<br />
+              render()  <br />
               FOLLOWING <br />
-              const &lcub;PName, PNum, balance, participation&rcub; = this.props; <br />
+              const PName, PNum, balance, participation = this.props; <br />
               is the same as :<br />
               this.props.PName<br />
               this.props.PNum<br />
@@ -89,7 +87,7 @@ const Inform = () => {
               this.props.participation<br />
               this is called <b>DESTRUCTURING props</b> and this could have also been done with states if required<br />
 
-              const &lcub;PName, PNum, balance, participation&rcub; = this.props;<br />
+              const PName, PNum, balance, participation = this.props;<br />
             </p>
           </div>
         </div>
