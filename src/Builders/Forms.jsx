@@ -1,104 +1,74 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
+import axios from 'axios'
 
-import { connect } from 'react-redux';
+//take directly from https://www.youtube.com/watch?v=x9UEDRbLhJE&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=43
+class PostForm extends Component {
+	constructor(props) {
+		super(props)
 
-let meStart;
+		this.state = {
+			userId: '',
+			title: '',
+			body: ''
+		}
+	}
 
-//mapStateToProps
-const mapping = xyz => ({ 
-    fullname: xyz.BlankData.fullname 
-});
+	changeHandler = e => {
+		this.setState({ [e.target.name]: e.target.value })
+	}
 
+	submitHandler = e => {
+		e.preventDefault()
+		console.log(this.state)
+		axios
+            .post('https://jsonplaceholder.typicode.com/posts', this.state)
+            //the post takes two parameters, first where is it sending , and second is what is the data to be sent
+			.then(response => {
+				console.log(response)
+			})
+			.catch(error => {
+				console.log(error)
+			})
+	}
 
-//mapDispatchToProps can also be written as something with another name
-const mapDispatchToProps =(dispatch)=> {
-    //const data = meStart;
-
-    //AgeUP: ()=> dispatch({type:'Age_UP'}),
-    //console.log("dispatch is : " + dispatch);
-    console.log("meStart is : " + meStart);
-
-    //return dispatch
-    //return ()=>({dispatch})
-    return {
-        //()=> dispatch({type: 'UpdateName', valz: aaa})
-
-        UpdateName: ()=> dispatch({type:'UpdateName', valz:meStart})
-    }
-    };
-
-
-
-class Forms extends Component {
-    // because we are using mapping or what the world knwows as 'mapStateToProps' fullname orignally is coming
-    // from the store, but then we make a copy of that in this component state. AND because that is 'extending the 
-    //the parent props we are using the constructor (props) && super(props) to get the 'props' from the parent thingy
-
-    constructor (props) {
-        super(props)
-        this.state = { 
-            fullname:this.props.fullname
-         }
-    }
-    // state = { 
-    // fullname:null
-    // }
-
-
-    handleSubmit = (event) => {
-        event.preventDefault()
-
-        // 'show me the data
-       
-        console.log("the data from this form is as follows :" + meStart.fullname);
-
-        //mapDispatchToProps( 'UpdateName',data.fullname)
-
-        //this.props.UpdateName
-    }
-
-
-
-    handleInputChange = (event) => {
-        event.preventDefault();
-        //console.log(event);
-        // the following allows you to get the name of the input as well as the value
-        //console.log(event.target.name);
-        //console.log(event.target.value);
-
-        // using callback cause your a pro like that bro... bro
-        this.setState({
-            [event.target.name]: event.target.value
-        }, () => {
-            meStart = this.state.fullname;
-            console.log("meStart is : " + meStart);           
-        })
-
-
-    }
-
-    render() { 
-        //const {fullname} = this.state; BOTH LINES WORK THE SAME WAY ... ?
-        const fullname = this.state.fullname;
-        //console.log(fullname)
-
-        return (
+	render() {
+		const { userId, title, body } = this.state
+		return (
             <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <h1>Hi {fullname}</h1>
-                        <p> does not work correctly :-(</p>
-
-                        <form onSubmit={this.props.UpdateName}>
-                            <p>put stuff here : <input type='text' placeholder={this.props.fullname} name="fullname" onChange={this.handleInputChange}/> </p>
-                            <p> <button> submit</button></p>
-                        </form>
-                    </div>
-                </div>
+            <div className="row">
+                <div className="col-12">
+				<form onSubmit={this.submitHandler}>
+					<div>
+						<input
+							type="text"
+							name="userId"
+							value={userId}
+							onChange={this.changeHandler}
+						/>
+					</div>
+					<div>
+						<input
+							type="text"
+							name="title"
+							value={title}
+							onChange={this.changeHandler}
+						/>
+					</div>
+					<div>
+						<input
+							type="text"
+							name="body"
+							value={body}
+							onChange={this.changeHandler}
+						/>
+					</div>
+					<button type="submit">Submit</button>
+				</form>
+			</div>
             </div>
-          );
-    }
+            </div>
+		)
+	}
 }
- 
-export default connect (mapping, mapDispatchToProps) (Forms);
-//export default Forms;
+
+export default PostForm
