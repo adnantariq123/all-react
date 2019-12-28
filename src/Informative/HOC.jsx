@@ -19,13 +19,24 @@ class HOC extends Component {
                             <p> const NewComponent = <b>higherOrderComponent</b>(originalComponent)</p>
                             <p> const <b>IronMan</b> = <b>Suit</b>(Tony Stark)</p>
 
-                            
-                            <HoverC txt="How you Doing -.-?"/>
-                            <ClickC/>
-                            
+
+                            <HoverC txt="How you Doing -.-?" />
+                            <ClickC />
+
                         </div>
+                    </div>
+                </div>
+<br/><br/>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <h1>Render Props</h1>
+                            <p> there is also render props which is kinda like HOC. look at the following video <a href="https://www.youtube.com/watch?v=EZil2OTyB4w&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=37" target="_new">Check it out!</a></p>
                         </div>
-                        </div>
+                    </div>
+                </div>
+
+
             </>
         );
     }

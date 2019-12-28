@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
 
-//HOC baby!
-// it is a function that accept sht eoriginal compoent and returns a new component
-const UpdatedComponent = (OriginalComponent) => {
+/*
+
+HIGHER ORDER FUNCTIONS- You import them in which child component, take a look at HoverCounter.js AND ClickCounter.js
+
+it is a function that accept the original compoent and returns a new component...
+What makes this function even more powerful is that, just like any other functions it could be defined with
+as many parameters as you want:
+
+const functionName = (Component, argument1, argument2, .. you could add AS MANY arguments as you need) =>{
+    customState={}
+
+    customHandler=()=>{}
+
+}
+*/
+
+const UpdatedComponent = (OriginalComponent, incrementNumber) => {
     class NewComponent extends Component {
 		constructor(props) {
 			super(props)
@@ -12,9 +26,14 @@ const UpdatedComponent = (OriginalComponent) => {
 			}
 		}
 
+        // you could have added as many different functions you wanted. You then simply attach them as props 
+        //to the OriginalComponent
 		incrementCount = () => {
+            if (incrementNumber === undefined) { // undefined worked, nul did not
+                incrementNumber =1
+            }
 			this.setState(prevState => {
-				return { count: prevState.count + 1 }
+				return { count: prevState.count + incrementNumber }
 			})
 		}
         

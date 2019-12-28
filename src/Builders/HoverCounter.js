@@ -7,9 +7,9 @@ class HoverCounter extends Component {
     render() {
         const { count, DaIncreasing, txt } = this.props
         // notice how power this is! it could be a onClick or onHover
-        return <h2 onMouseOver={DaIncreasing}>Hello {this.props.name} Hovered {count} times, {txt}</h2>
+        return <h3 onMouseOver={DaIncreasing}>Hello {this.props.name} Hovered {count} times, {txt}</h3>
     }
 }
 
 // so instead of exporting the orignal component, we are exporting the HOC with the attached thing.
-export default withCounter(HoverCounter, 10)
+export default withCounter(HoverCounter)

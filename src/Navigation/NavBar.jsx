@@ -25,6 +25,13 @@ class NavBar extends Component {
               </li>
 
               <li className="nav-item">
+                <Link to="/Context" className="nav-link">
+                Context
+                </Link>
+              </li>
+
+
+              <li className="nav-item">
                 <Link to="/ClassvsFun" className="nav-link">
                   Class vs Functional Components
                 </Link>
