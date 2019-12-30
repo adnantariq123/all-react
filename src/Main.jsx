@@ -18,7 +18,7 @@ import HOC from "./Informative/HOC";
 import Context from "./Informative/ReactContext";
 import Hooks from "./Informative/Hooks";
 import useEffect from "./Informative/useEffect";
-
+import REDUX from "./Informative/REDUX";
 
 
 function Main() {
@@ -44,6 +44,7 @@ function Main() {
         <Route path="/Forms" component={Forms}/>
         <Route path="/Visual" component={Visual}/>
         <Route path="/PersistedData" component={PersistedData}/>
+        <Route path="/REDUX" component={REDUX}/>
       </Switch>
     </BrowserRouter>
   );

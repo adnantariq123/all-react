@@ -95,6 +95,12 @@ class NavBar extends Component {
                 </span>
               </li>
 
+              <li className="nav-item">
+                <Link to="/REDUX" className="nav-link">
+                REDUX
+                </Link>
+              </li>
+
             </ul>
           </div>
         </div>
