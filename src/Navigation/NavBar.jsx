@@ -50,6 +50,12 @@ class NavBar extends Component {
               </li>
 
               <li className="nav-item">
+                <Link to="/useEffect" className="nav-link">
+                  useEffect
+                </Link>
+              </li>
+
+              <li className="nav-item">
                 <Link to="/Info" className="nav-link">
                   General Information
                 </Link>

@@ -17,6 +17,7 @@ import ErrorHandling from "./Informative/ErrorHandling";
 import HOC from "./Informative/HOC";
 import Context from "./Informative/ReactContext";
 import Hooks from "./Informative/Hooks";
+import useEffect from "./Informative/useEffect";
 
 
 
@@ -35,6 +36,7 @@ function Main() {
         <Route path="/ClassvsFun" exact component={ClassvsFun}/>
         <Route path="/PureVsRegComp" component={PureVsRegComponent}/>
         <Route path="/Hooks" component={Hooks}/>
+        <Route path="/useEffect" component={useEffect}/>
         <Route path="/Info" component={Info}/>
         <Route path="/TechSith" component={TechSithAgeCounter}/>
         <Route path="/ErrorHandling" component={ErrorHandling}/>

@@ -29,9 +29,9 @@ function HookCounter() {
         <div className="container">
             <div className="row">
                 <div className="col-12">
-                    <h1>Hooks</h1>
+                    <h1>Hooks - useState</h1>
                     
-                    <h3> UseSate</h3>
+                   
                     <p>"The useSate does not autmatically merge and update the object" - vishwas</p>
 
                     <p> look how easy it was to add state in a <b>functional component</b>. only call Hooks at the "top lvl", that means dont call Hooks inside a loop condition, or nested functions.</p>
@@ -50,9 +50,11 @@ function HookCounter() {
                     <Hooks2/>
 
                     <br/> <br/> <br/>
+                    <h3>when the state is an Object</h3>
                     <Hooks3/>
 
                     <br/> <br/> <br/>
+                    <h3>when the state is an Array</h3>
                     <Hooks4/>
 
                 </div>
