@@ -34,7 +34,7 @@ class ReduxInfo extends Component {
                         
                         <p className="alert alert-primary"><i>up till now we we using <b>Synchronous Actions</b>  </i>: that is as soon as an actions was dispatched, the state was immediately updated.</p>
                         <p className="alert alert-danger"><b>Async Actions</b> Asynchronous API calls to fetch data from an end point and use that data in your applications</p>
-                        
+                        <h3>ThunkMiddleware allow the action creator to return function instead of an action</h3>
                         </div>
                     </div>
                 </div>
