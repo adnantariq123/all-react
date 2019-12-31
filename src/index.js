@@ -4,18 +4,21 @@ import './index.css';
 import MainApp from './Main';
 import * as serviceWorker from './serviceWorker';
 
-
+// new Shit middleware
+// import {reduxLogger} from "redux-logger";
+// const logger = reduxLogger.createLogger();
+import logger from 'redux-logger'
 
 //adding reducer
-import {createStore} from 'redux';
+import {applyMiddleware, createStore} from 'redux';
 import {Provider} from 'react-redux';
 
 import MainCombineState from './ALLStatesGoHere/MainCombineStates';
 
 
-const store = createStore(MainCombineState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+//const store = createStore(MainCombineState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 //const store = createStore(MainCombineState);
-
+const store = createStore(MainCombineState, applyMiddleware(logger));
 
 
 

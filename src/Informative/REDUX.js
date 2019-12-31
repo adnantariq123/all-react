@@ -26,6 +26,15 @@ class ReduxInfo extends Component {
                         <p>To specify how the state tree is tranformed by actions, you write reducers. Reducers are functions that accepts state and actions as arguments, and return the next state of that applications.</p>
 
 
+                        <h1>Middleware</h1>
+                        <p>the suggested way to extend Redux with custom functionality</p>
+                        <p>Provides a "third party extension point" between dispatchijng an action, and the moment it reaches the reducers.... <i> whatevere that means</i> </p>
+                        <p>Use Middleware for <b>logging, cash reporting, performing asynhronous </b> task etc</p>
+                            <br/><br/>
+                        
+                        <p className="alert alert-primary"><i>up till now we we using <b>Synchronous Actions</b>  </i>: that is as soon as an actions was dispatched, the state was immediately updated.</p>
+                        <p className="alert alert-danger"><b>Async Actions</b> Asynchronous API calls to fetch data from an end point and use that data in your applications</p>
+                        
                         </div>
                     </div>
                 </div>
