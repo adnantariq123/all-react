@@ -13,6 +13,7 @@ import logger from 'redux-logger'
 import {applyMiddleware, createStore} from 'redux';
 import {Provider} from 'react-redux';
 
+// my main reducer
 import MainCombineState from './ALLStatesGoHere/MainCombineStates';
 
 

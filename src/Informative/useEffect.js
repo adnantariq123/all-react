@@ -1,7 +1,7 @@
 import React from 'react';
 
 import UseEffect1 from "../Builders/UseEffect1";
-
+import UseSelector from "../Builders/UseSelector";
 
 function useEffect() {
 
@@ -21,6 +21,9 @@ so in this example we are targeting the , [count]<br/>
 *************************************<br/>
  OR we can leave it blank and every time any state property changes useEffect is fired</p><br/>
                     <UseEffect1/>
+
+                    <br/><br/>
+                    <UseSelector/>
                 </div>
             </div>
         </div>

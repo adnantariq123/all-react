@@ -17,11 +17,12 @@ import { connect } from 'react-redux';
 const mapStateToProps = state => ({ age: state.StateCC.age })
 CAN ALSO BE Written like this 
 */
-const mapping = xyz => ({ 
+const mapping = xyz => { 
+    return {
     age: xyz.StateCC.age ,
-    //isMarked: xyz.StateCC.isMarked,
     MarkNum: xyz.StateCC.MarkNum
-});
+    }
+};
 
 //mapDispachToProps can also be written as something with another name
 const dispatching =(dispatch)=> {
