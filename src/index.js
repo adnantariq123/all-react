@@ -4,13 +4,12 @@ import './index.css';
 import MainApp from './Main';
 import * as serviceWorker from './serviceWorker';
 
-// new Shit middleware
-// import {reduxLogger} from "redux-logger";
-// const logger = reduxLogger.createLogger();
+
 import logger from 'redux-logger'
 
-//adding reducer
+//adding Middleware
 import {applyMiddleware, createStore} from 'redux';
+import thunk from "redux-thunk";
 import {Provider} from 'react-redux';
 
 // my main reducer
@@ -19,7 +18,7 @@ import MainCombineState from './ALLStatesGoHere/MainCombineStates';
 
 //const store = createStore(MainCombineState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 //const store = createStore(MainCombineState);
-const store = createStore(MainCombineState, applyMiddleware(logger));
+const store = createStore(MainCombineState, applyMiddleware(logger, thunk));
 
 
 

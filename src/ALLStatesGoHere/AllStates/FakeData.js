@@ -1,59 +1,43 @@
-import axios from 'axios';
+import {FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS, FETCH_USERS_FAILURE } from "./FakeStuff/userTypes";
+
+
+const initialState = {
+  loading:true,
+  data:[],
+  error:""
+
+}
+
 
 /*
-const initialState = () => {
 
-    axios.get("https://jsonplaceholder.typicode.com/posts")
-    .then(res=> {
-    //console.log(res);
-    return (res);
-    })
-
-}
+*********************************************************************
+So basicly, Based on the action do something to the state, If no action 
+then return state as it is (default: return state).
+*********************************************************************
 
 */
-
-const initialState = [
-        {
-          "userId": 1,
-          "id": 1,
-          "title": "quidem molestiae enim"
-        },
-        {
-          "userId": 1,
-          "id": 2,
-          "title": "sunt qui excepturi placeat culpa"
-        },
-        {
-          "userId": 1,
-          "id": 3,
-          "title": "omnis laborum odio"
-        },
-        {
-          "userId": 1,
-          "id": 4,
-          "title": "non esse culpa molestiae omnis sed optio"
-        },
-        {
-          "userId": 1,
-          "id": 5,
-          "title": "eaque aut omnis a"
-        },
-        {
-          "userId": 1,
-          "id": 6,
-          "title": "natus impedit quibusdam illo est"
-        }
-]
-
-
-
-const FakeData = (state=initialState) => {
-    let newState = {...state};
-    //console.log(state);
-    //console.log(newState);
-
-    return newState;
+const FakeReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_USERS_REQUEST:
+      return {
+        ...state,
+        loading: true
+      }
+    case FETCH_USERS_SUCCESS:
+      return {
+        loading: false,
+        users: action.payload,
+        error: ''
+      }
+    case FETCH_USERS_FAILURE:
+      return {
+        loading: false,
+        users: [],
+        error: action.payload
+      }
+    default: return state
+  }
 }
 
-export default FakeData;
+export default FakeReducer;

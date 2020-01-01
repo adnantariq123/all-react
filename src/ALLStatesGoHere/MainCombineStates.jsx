@@ -12,7 +12,7 @@ import {combineReducers} from 'redux';
 const MainCombined = combineReducers(
     {
         StateCC: StateCounter,
-        FakeData: FakeData,
+        FakeDataCC: FakeData,
         BlankData:BlankData
     }
 

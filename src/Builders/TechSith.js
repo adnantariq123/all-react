@@ -17,10 +17,10 @@ import { connect } from 'react-redux';
 const mapStateToProps = state => ({ age: state.StateCC.age })
 CAN ALSO BE Written like this 
 */
-const mapping = xyz => { 
+const mapping = state => { 
     return {
-    age: xyz.StateCC.age ,
-    MarkNum: xyz.StateCC.MarkNum
+    age: state.StateCC.age ,
+    MarkNum: state.StateCC.MarkNum
     }
 };
 
