@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import MyCall from "../Builders/MyCall";
+// import MyCall from "../Builders/MyCall";
 
-//import ExtremelyImportant from "../Builders/ExtremelyImportant";
+import ExtremelyImportant from "../Builders/ExtremelyImportant";
 
 
 //https://www.youtube.com/watch?v=3rlUADfuKhQ&list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK&index=3
@@ -13,8 +13,8 @@ class ReduxInfo extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            {/* <ExtremelyImportant/> */}
-                            <MyCall />
+                            <ExtremelyImportant/>
+                            {/* <MyCall /> */}
                             <h1>Redux</h1>
                             <p>"Redux is a predictable state container for JavaScript apps". The state of your whole application is stored in one object tree within a single store.</p>
                             <ul>
