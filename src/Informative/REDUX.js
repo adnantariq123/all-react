@@ -38,10 +38,14 @@ class ReduxInfo extends Component {
                             <p>Provides a "third party extension point" between dispatchijng an action, and the moment it reaches the reducers.... <i> whatevere that means</i> </p>
                             <p>Use Middleware for <b>logging, cash reporting, performing asynhronous </b> task etc</p>
                             <br /><br />
+            
+                            <p>https://stackoverflow.com/questions/43788447/why-use-redux-thunk</p>
 
                             <p className="alert alert-primary"><i>up till now we we using <b>Synchronous Actions</b>  </i>: that is as soon as an actions was dispatched, the state was immediately updated.</p>
                             <p className="alert alert-danger"><b>Async Actions</b> Asynchronous API calls to fetch data from an end point and use that data in your applications</p>
                             <h3>ThunkMiddleware allow the action creator to return function instead of an action</h3>
+                            
+                            
 
 
                         </div>
