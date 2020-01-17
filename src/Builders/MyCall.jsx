@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 
 const mapping = state => { 
     return {
-    Fakers: state.FakeDataCC
+    //Fakers: state.FakeDataCC
+    StateCC: state.StateCC
     }
 };
 
@@ -29,7 +30,8 @@ class MyCall extends Component {
             
             IF I add those, the applications work, but NOTHING is showing as those keys are NOT string 
             */}
-            <p>{this.props.Fakers.data}</p>
+            <p style={{color:"red"}}>COMING from class MyCall extends Component :: {this.props.StateCC.age}</p>
+           
             </>
         );
     }

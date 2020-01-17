@@ -4,6 +4,7 @@ import Lorem from './LoreumIpson';
 
 import RefDemo from "../Builders/RefDemo";
 import InputParent from "../Builders/inputParent";
+import MyCall from "../Builders/MyCall";
 
 //  following the https://www.youtube.com/watch?v=d9Pndaq9MJs example
 
@@ -146,6 +147,8 @@ const Inform = () => {
 
       </div>
 
+
+    <MyCall/>
 
       <div className="container">
         <div className="row">
