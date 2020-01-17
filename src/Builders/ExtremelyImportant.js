@@ -1,32 +1,30 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { fetchUsers } from '../redux.FakeData'
+// import { fetchUsers } from '../redux.FakeData'
+import { fetchUsers } from "../ALLStatesGoHere/AllStates/FakeStuff/userActions";
 
-// yeah ExtremelyImportant BUT THE FUCKING SHIT DIDN't WORK
+//AND I MADE IT WORK ^_^
 
-function UsersContainer ({ userData, fetchUsers }) {
+function UsersContainer({FakeDataCC, fetchUsers }) {
   useEffect(() => {
     fetchUsers()
   }, [])
-  return userData.loading ? (
-    <h2>Loading</h2>
-  ) : userData.error ? (
-    <h2>{userData.error}</h2>
-  ) : (
-    <div>
-      <h2>Users List</h2>
-      <div>
-        {userData &&
-          userData.users &&
-          userData.users.map(user => <p>{user.name}</p>)}
-      </div>
-    </div>
-  )
+  return FakeDataCC.loading ? (<h2>Loading</h2>) :
+         FakeDataCC.error ? (<h2>{FakeDataCC.error}</h2>) :
+         (<div>
+          <h2>Users List</h2>
+            <div>
+              {FakeDataCC &&
+                FakeDataCC.users &&
+                FakeDataCC.users.map(user => <p key={user.id}>{user.name}</p>)}
+            </div>
+          </div>
+         )
 }
 
 const mapStateToProps = state => {
   return {
-    userData: state.user
+    FakeDataCC: state.FakeDataCC
   }
 }
 
